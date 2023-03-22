@@ -74,10 +74,12 @@ namespace ConsoleApp1
                 // Query test...
 
                 // Remove table
+                /*
                 ExecuteQuery(conn, "DROP TABLE test_table");
 
                 Console.WriteLine("\nPress <enter> to continue...");
                 while (Console.ReadKey().Key != ConsoleKey.Enter) { }
+                */
 
                 // Create table
                 ExecuteQuery(conn, "CREATE TABLE IF NOT EXISTS `brandtransparency`.`test_table` " +
@@ -90,6 +92,7 @@ namespace ConsoleApp1
                 // Rename row name
                 ExecuteQuery(conn, "UPDATE test_table SET name = 'Hugo' WHERE name = 'Pelle'");
 
+                Console.WriteLine("\nDone...");
 
                 conn.Close();
             }
