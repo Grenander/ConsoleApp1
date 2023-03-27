@@ -15,6 +15,9 @@ public class SqlManager
     {
         Disconnect();
 
+        if (connectionString == null || connectionString.Length < 30)
+            return false;
+
         try
         {
             conn = new MySqlConnection(connectionString);
