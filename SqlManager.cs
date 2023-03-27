@@ -69,6 +69,9 @@ public class SqlManager
     {
         int result = 0;
 
+        if (conn == null || query.Length == 0)
+            return -1;
+
         try
         {
             MySqlConnector.MySqlCommand myCommand = new MySqlConnector.MySqlCommand(query);
@@ -89,7 +92,7 @@ public class SqlManager
 
     public MySqlCommand GetSqlCommand(string command)
     {
-        if (conn == null)
+        if (conn == null || command.Length == 0)
             return null;
 
         return new MySqlCommand(command, conn);
